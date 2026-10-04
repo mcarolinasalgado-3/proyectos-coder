@@ -1,0 +1,49 @@
+// ==========================================================
+// TIPOGRAFÍA — fuentes, tamaños y colores de texto.
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/extend";
+
+// Animación nativa (@keyframes): el título baja suavemente al cargar la página
+@keyframes aparecer-desde-arriba {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: $fuente-base;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h1 {
+  @extend %texto-primario;
+  font-size: $tamano-h1;
+  @include animar(aparecer-desde-arriba, 0.9s);
+}
+
+h2 {
+  @extend %texto-primario;
+  font-size: $tamano-h2;
+}
+
+.lobster-regular {
+  font-family: $fuente-titulo;
+  font-size: $tamano-titulo-lobster;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.texto-imagenes {
+  color: $color-secundario;
+}

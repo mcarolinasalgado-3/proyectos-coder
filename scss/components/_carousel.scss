@@ -1,0 +1,38 @@
+// ==========================================================
+// CAROUSEL — personalización del carrusel de Bootstrap.
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Carrusel de la home: lo ubico en la grilla de <main>.
+// Mobile first: ocupa todo el ancho y se va achicando a medida que hay más pantalla.
+#carouselIndex {
+  grid-area: promociones;
+  width: 100%;
+
+  @include desde($bp-tablet) {
+    width: 60%;
+  }
+
+  @include desde($bp-desktop) {
+    width: 30%;
+  }
+}
+
+// Mismo efecto para las flechas "prev" y "next": en vez de repetir el bloque, lo genero con @each.
+@each $direccion in prev, next {
+  .carousel-control-#{$direccion}-icon {
+    transition: transform $transicion, filter $transicion;
+  }
+
+  .carousel-control-#{$direccion} {
+    &:hover .carousel-control-#{$direccion}-icon {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 6px $color-primario);
+    }
+
+    &:focus .carousel-control-#{$direccion}-icon {
+      @include contorno-foco($color-primario, 4px);
+    }
+  }
+}

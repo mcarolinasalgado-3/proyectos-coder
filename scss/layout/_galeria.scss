@@ -1,0 +1,28 @@
+// ==========================================================
+// GALERÍA — grilla de figuras: 1 columna en mobile, 2 en tablet y 3 en desktop.
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $espacio-l;
+
+  // A todas las imágenes que dependen de la galería, les aplico este width
+  img {
+    width: 100%;
+  }
+
+  figure {
+    @include efecto-elevar;
+  }
+
+  @include desde($bp-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include desde($bp-desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

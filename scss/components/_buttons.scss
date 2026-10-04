@@ -1,0 +1,28 @@
+// ==========================================================
+// BUTTONS — botón del formulario (con sus estados).
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+form button {
+  align-self: flex-start;
+  padding: 0.6rem 0.6rem;
+  background-color: $color-primario;
+  color: $color-boton-texto;
+  border: none;
+  border-radius: $radio-borde;
+  cursor: pointer;
+  transition: background-color $transicion, transform $transicion;
+
+  &:hover {
+    background-color: $color-primario-hover;
+  }
+
+  &:focus {
+    @include contorno-foco($color-texto-claro);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

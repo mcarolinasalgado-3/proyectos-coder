@@ -1,0 +1,16 @@
+// ==========================================================
+// FORMS — formulario de contacto.
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+form {
+  @include columna($espacio-m);
+  padding: $espacio-m;
+}
+
+fieldset {
+  @include columna($espacio-s);
+  padding: $espacio-m;
+  border: none;
+}

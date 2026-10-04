@@ -1,0 +1,20 @@
+// ==========================================================
+// HEADER
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/extend";
+
+header {
+  @extend %superficie-oscura;
+  background-image: url($img-portada);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $espacio-m $espacio-xl;
+}
+
+// Variante del header en la página de eventos (otra imagen de fondo)
+.header-eventos {
+  background-image: url($img-eventos);
+}

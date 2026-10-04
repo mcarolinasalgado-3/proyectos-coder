@@ -1,0 +1,18 @@
+// ==========================================================
+// FOOTER
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+footer {
+  background-color: $color-footer-fondo;
+
+  ul {
+    @include lista-en-fila;
+  }
+}
+
+.texto-footer {
+  padding: 1rem $espacio-xl;
+  color: $color-footer-texto;
+}

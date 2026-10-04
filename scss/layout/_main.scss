@@ -1,0 +1,44 @@
+// ==========================================================
+// MAIN — grilla principal de cada página (mobile first).
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/extend";
+
+main {
+  @extend %superficie-oscura;
+  display: grid;
+  grid-template-areas:
+    "titulo"
+    "promociones"
+    "info"
+    "contenido";
+  // Una sola columna que nunca se pasa del ancho de pantalla (evita el scroll horizontal en mobile)
+  grid-template-columns: minmax(0, 1fr);
+  gap: $espacio-l;
+  padding: $espacio-m;
+  margin: $espacio-m;
+  justify-items: center;
+}
+
+// Áreas de la grilla
+h1 {
+  grid-area: titulo;
+}
+
+aside {
+  grid-area: info;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: $espacio-l;
+  grid-area: contenido;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+}

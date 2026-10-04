@@ -1,0 +1,27 @@
+// ==========================================================
+// MAIN.SCSS — único punto de entrada.
+// Compilar:  npx sass scss/main.scss css/style.css
+// (el orden importa: de lo más general a lo más específico)
+// ==========================================================
+
+// 1. Utilities: variables, mixins y placeholders (no generan CSS por sí solos)
+@use "utilities/variables";
+@use "utilities/mixins";
+@use "utilities/extend";
+
+// 2. Base: estilos globales y tipografía
+@use "base/base";
+@use "base/tipografia";
+
+// 3. Layout: estructura de la página
+@use "layout/header";
+@use "layout/nav";
+@use "layout/main";
+@use "layout/galeria";
+@use "layout/footer";
+
+// 4. Components: piezas reutilizables
+@use "components/cards";
+@use "components/forms";
+@use "components/buttons";
+@use "components/carousel";

@@ -1,0 +1,46 @@
+// ==========================================================
+// NAV — personalización de la navbar de Bootstrap.
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.navbar-brand {
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+// Ruta de especificidad: header > nav > ul > li > a
+header nav {
+  ul {
+    @include lista-en-fila;
+
+    li a {
+      color: $color-primario;
+      font-size: $tamano-subtitulo;
+      font-weight: bold;
+      padding: 0.3rem;
+      border-radius: $radio-borde;
+      margin-right: 0.5rem;
+      transition: background-color $transicion, color $transicion;
+
+      &:visited {
+        color: $color-secundario;
+      }
+
+      &:hover {
+        background-color: $color-nav-hover;
+      }
+
+      &:focus {
+        @include contorno-foco($color-primario);
+      }
+
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

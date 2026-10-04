@@ -1,0 +1,38 @@
+// ==========================================================
+// CARDS — tarjetas (.tarjeta) usadas en article, aside y figure.
+// Mobile first: 1 por fila en mobile, 2 en tablet y 3 en desktop.
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.tarjeta {
+  background-color: $color-fondo;
+  width: 100%;
+  @include columna(0.7rem);
+  align-items: center;
+  text-align: center;
+  padding: $espacio-xl;
+  @include efecto-elevar;
+
+  @include desde($bp-tablet) {
+    @include columnas-flex(2, 4%);
+  }
+
+  @include desde($bp-desktop) {
+    @include columnas-flex(3, 3%);
+  }
+
+  h2 {
+    font-size: $tamano-subtitulo;
+  }
+
+  p {
+    font-size: $tamano-texto-tarjeta;
+  }
+
+  img {
+    width: 70%;
+    height: 350px;
+    object-fit: cover;
+  }
+}

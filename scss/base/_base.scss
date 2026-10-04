@@ -1,0 +1,29 @@
+// ==========================================================
+// BASE — estilos globales aplicados directamente a etiquetas.
+// ==========================================================
+@use "../utilities/variables" as *;
+
+// Reseteo
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-fondo;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-texto-claro;
+}
