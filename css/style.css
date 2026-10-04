@@ -1,0 +1,310 @@
+h1, h2, main, header {
+  color: #FFD85F;
+}
+
+main, header {
+  background-color: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #F2F2F2;
+}
+
+@keyframes aparecer-desde-arriba {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h1 {
+  font-size: 3rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  h1 {
+    animation: aparecer-desde-arriba 0.9s ease-out 0s both;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.texto-imagenes {
+  color: #9eb8a3;
+}
+
+header {
+  background-image: url("../img/fondo-portada.jpg");
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+}
+
+.header-eventos {
+  background-image: url("../img/fondo-eventos.png");
+}
+
+.navbar-brand img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-evenly;
+}
+header nav ul li a {
+  color: #FFD85F;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+header nav ul li a:visited {
+  color: #9eb8a3;
+}
+header nav ul li a:hover {
+  background-color: rgba(251, 249, 249, 0.4901960784);
+}
+header nav ul li a:focus {
+  outline: 2px solid #FFD85F;
+  outline-offset: 2px;
+}
+header nav ul li a:active {
+  text-decoration: underline;
+}
+
+main {
+  display: grid;
+  grid-template-areas: "titulo" "promociones" "info" "contenido";
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.25rem;
+  margin: 1.25rem;
+  justify-items: center;
+}
+
+h1 {
+  grid-area: titulo;
+}
+
+aside {
+  grid-area: info;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  grid-area: contenido;
+}
+section h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.galeria img {
+  width: 100%;
+}
+.galeria figure {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.galeria figure:hover {
+  transform: scale(1.03);
+  background-color: rgba(255, 216, 95, 0.15);
+  box-shadow: 0 4px 16px rgba(255, 216, 95, 0.4);
+}
+@media (min-width: 768px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+footer {
+  background-color: #515151;
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-evenly;
+}
+
+.texto-footer {
+  padding: 1rem 2rem;
+  color: #cccccc;
+}
+
+.tarjeta {
+  background-color: #000000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.tarjeta:hover {
+  transform: scale(1.03);
+  background-color: rgba(255, 216, 95, 0.15);
+  box-shadow: 0 4px 16px rgba(255, 216, 95, 0.4);
+}
+@media (min-width: 768px) {
+  .tarjeta {
+    width: 46%;
+  }
+}
+@media (min-width: 1024px) {
+  .tarjeta {
+    width: 30.3333333333%;
+  }
+}
+.tarjeta h2 {
+  font-size: 1.5rem;
+}
+.tarjeta p {
+  font-size: 1.2rem;
+}
+.tarjeta img {
+  width: 70%;
+  height: 350px;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.25rem;
+  border: none;
+}
+
+form button {
+  align-self: flex-start;
+  padding: 0.6rem 0.6rem;
+  background-color: #FFD85F;
+  color: #202b22;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+form button:hover {
+  background-color: #e6c254;
+}
+form button:focus {
+  outline: 2px solid #F2F2F2;
+  outline-offset: 2px;
+}
+form button:active {
+  transform: scale(0.97);
+}
+
+#carouselIndex {
+  grid-area: promociones;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #carouselIndex {
+    width: 60%;
+  }
+}
+@media (min-width: 1024px) {
+  #carouselIndex {
+    width: 30%;
+  }
+}
+
+.carousel-control-prev-icon {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px #FFD85F);
+}
+.carousel-control-prev:focus .carousel-control-prev-icon {
+  outline: 2px solid #FFD85F;
+  outline-offset: 4px;
+}
+
+.carousel-control-next-icon {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.carousel-control-next:hover .carousel-control-next-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px #FFD85F);
+}
+.carousel-control-next:focus .carousel-control-next-icon {
+  outline: 2px solid #FFD85F;
+  outline-offset: 4px;
+}
+
+/*# sourceMappingURL=style.css.map */
