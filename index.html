@@ -5,61 +5,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Galpón | Inicio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- AOS: animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- Estilos propios (compilados desde scss/main.scss) -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div><a href="#"><img src="./img/elgalpon-logo.jpg" alt="logo de El Galpón"></a></div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="./pages/galeria.html">Galería</a></li>
-                <li><a href="./pages/nosotras.html">Nosotras</a></li>
-                <li><a href="./pages/eventos.html">Eventos</a></li>
-                <li><a href="./pages/contacto.html">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/elgalpon-logo.jpg" alt="logo de El Galpón">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./pages/galeria.html">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./pages/nosotras.html">Nosotras</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./pages/eventos.html">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-
     </header>
+
     <main>
-        <h1>¡El Galpón, buena birra!</h1>
-        <!--Sección de información breve-->
-        <aside>
-            <h2>La amistad es so que sucede entre birra y birra.</h2>
-            <p>Ver más...</p>
+        <h1 class="lobster-regular">¡El Galpón, buena birra!</h1>
+
+        <!-- Carrusel de promociones -->
+        <div id="carouselIndex" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/img_carrousel_1.jpg" class="d-block w-100" alt="Miércoles de trivia">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/img_carrousel_2.jpg" class="d-block w-100" alt="2x1 en IPA los jueves">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/img_carrousel_3.jpg" class="d-block w-100" alt="La Funkadera en vivo, sábado 26/9">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndex" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndex" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+
+        <!-- Sección de información breve -->
+        <aside class="tarjeta">
+            <h2 data-aos="fade-up">La amistad es eso que sucede entre birra y birra.</h2>
+            <a href="#" data-aos="fade-up" data-aos-delay="100">Ver más...</a>
         </aside>
+
         <section>
-            <article>
-                <h2>Cervezas</h2>
-                <img src="./img/barley.jpg" alt="Cerveza Barley">
-                <p>Cerveza Barley: Del estilo Ale muy fuerte y complejo, con un contenido de alcohol de 8% a 12% o más.
+            <article class="tarjeta">
+                <h2 data-aos="fade-up">Cervezas</h2>
+                <img src="./img/barley.jpg" alt="Cerveza Barley" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">Cerveza Barley: Muy fuerte y complejo,
+                    con un contenido de alcohol de 8% a 12% o más.
                 </p>
-                <img src="./img/blackipa.jpg" alt="Cerveza Black Ipa">
-                <p>Cerveza Black Ipa: Es un estilo híbrido que combina la apariencia oscura y el sutil trasfondo de una
-                    malta tostada con el potente amargor, sabor y aroma a lúpulo.</p>
+                <img src="./img/blackipa.jpg" alt="Cerveza Black Ipa" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">Cerveza Black Ipa: Es un estilo híbrido
+                    que combina la apariencia oscura y el sutil trasfondo de una malta tostada con el potente amargor,
+                    sabor y aroma a lúpulo.</p>
             </article>
-            <article>
-                <h2>Comidas</h2>
-                <img src="./img/hamburguesas1.jpg" alt="Hamburguesas">
-                <p>Chequeá nuestra oferta de hamburguesas.</p>
-                <img src="./img/chickenfingers1.jpg" alt="Chicken fingers">
-                <p>¿No querés carne de vaca? Chequeá nuestras opciones de pollo.</p>
-                <img src="./img/papasfritas1.jpg" alt="Papas fritas">
-                <p>¿Vegetariana/o? Tenemos opción cruelty free.</p>
+
+            <article class="tarjeta">
+                <h2 data-aos="fade-up">Comidas</h2>
+                <img src="./img/hamburguesas1.jpg" alt="Hamburguesas" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">Chequeá nuestra oferta de hamburguesas.
+                    Pollo, carne, vegetarianas y veganas.
+                </p>
+                <img src="./img/chickenfingers1.jpg" alt="Chicken fingers" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">¿No querés carne de vaca? Chequeá
+                    nuestras opciones de pollo.</p>
+                <img src="./img/papasfritas1.jpg" alt="Papas fritas" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">¿Vegetariana/o? Tenemos opción cruelty
+                    free.</p>
             </article>
-            <article>
-                <h2>Bebidas sin alcohol</h2>
-                <img src="./img/aguas.jpg" alt="Botellas de agua">
-                <p>Tenemos variedad de aguas embotelladas.</p>
-                <img src="./img/jugo-naranja.jpg" alt="Jugo de naranja">
-                <p>¿Ya probaste nuestros jugos? Naranja, pomelo y mucho más...</p>
-                <img src="./img/limonada.jpg" alt="Limonada">
-                <p>Limonadas y pomeladas.</p>
+
+            <article class="tarjeta">
+                <h2 data-aos="fade-up">Bebidas sin alcohol</h2>
+                <img src="./img/aguas.jpg" alt="Botellas de agua" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">Tenemos variedad de aguas embotelladas.
+                    Traídas desde luygares espectaculares.
+                </p>
+                <img src="./img/jugo-naranja.jpg" alt="Jugo de naranja" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">¿Ya probaste nuestros jugos? Naranja,
+                    pomelo y mucho más...</p>
+                <img src="./img/limonada.jpg" alt="Limonada" data-aos="zoom-in">
+                <p class="texto-imagenes" data-aos="fade-up" data-aos-delay="100">Limonadas y pomeladas.</p>
             </article>
         </section>
     </main>
+
     <footer>
-        <p>Todos los derechos reservados</p>
+        <p class="texto-footer">Todos los derechos reservados</p>
         <ul>
             <li><a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img src="./img/facebook.png"
                         alt="logo facebook"></a></li>
@@ -68,6 +129,13 @@
             <li><a href="https://x.com/?lang=es" target="_blank"><img src="./img/x.png" alt="logo x"></a></li>
         </ul>
     </footer>
+
+    <!-- Scripts: Bootstrap, AOS y JS propio -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
