@@ -1,0 +1,60 @@
+// ==========================================================
+// MIXINS — bloques de estilos reutilizables (varios reciben parámetros).
+// ==========================================================
+@use "sass:math";
+@use "variables" as *;
+
+// Media query "desde este ancho en adelante" (mobile first).
+// Uso: @include desde($bp-desktop) { ... }
+@mixin desde($ancho) {
+  @media (min-width: $ancho) {
+    @content;
+  }
+}
+
+// Ancho de un elemento para que entren N por fila, descontando una separación.
+// Uso: @include columnas-flex(3, 3%)  →  100% / 3 - 3%
+@mixin columnas-flex($cantidad, $separacion: 0%) {
+  width: math.div(100%, $cantidad) - $separacion;
+}
+
+// Aplica una animación @keyframes. Solo se activa si la persona no pidió "reducir movimiento".
+// Uso: @include animar(aparecer-desde-arriba, 0.9s, 0.2s)
+@mixin animar($nombre, $duracion: 0.8s, $retraso: 0s) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: $nombre $duracion ease-out $retraso both;
+  }
+}
+
+// Lista sin viñetas, en fila y con los ítems distribuidos (menú y redes del footer).
+@mixin lista-en-fila {
+  list-style: none;
+  display: flex;
+  gap: $espacio-s;
+  justify-content: space-evenly;
+}
+
+// Contenedor flex en columna con separación entre hijos.
+@mixin columna($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+// Contorno visible al navegar con teclado (:focus).
+@mixin contorno-foco($color, $separacion: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $separacion;
+}
+
+// Efecto "elevar" al pasar el mouse: lo comparten las tarjetas y las figuras de la galería.
+// Incluye su propio :hover gracias al selector &.
+@mixin efecto-elevar {
+  transition: transform $transicion, box-shadow $transicion, background-color $transicion;
+
+  &:hover {
+    transform: scale(1.03);
+    background-color: rgba($color-primario, 0.15);
+    box-shadow: 0 4px 16px rgba($color-primario, 0.4);
+  }
+}

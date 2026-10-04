@@ -1,0 +1,46 @@
+// ==========================================================
+// VARIABLES — único lugar donde viven los valores del diseño.
+// Si cambia un color o una medida, se cambia acá y listo.
+// ==========================================================
+@use "sass:math";
+
+// ----- Colores -----
+$color-primario: #FFD85F;         // amarillo de marca: títulos, links, botones, brillos
+$color-primario-hover: #e6c254;   // amarillo más oscuro (hover del botón)
+$color-fondo: #000000;            // negro: fondo del sitio, del header y de las tarjetas
+$color-texto-claro: #F2F2F2;      // blanco suave: links y contorno de foco del botón
+$color-secundario: #9eb8a3;       // verde grisáceo: textos de imágenes y links visitados
+$color-footer-fondo: #515151;     // gris del footer
+$color-footer-texto: #cccccc;     // gris claro de los textos del footer
+$color-boton-texto: #202b22;      // verde oscuro: texto del botón "Enviar"
+$color-nav-hover: #fbf9f97d;      // blanco semitransparente: hover de los links del menú
+
+// ----- Tipografías -----
+$fuente-base: "Roboto", sans-serif;
+$fuente-titulo: "Lobster", sans-serif;
+
+// ----- Tamaños de texto (se calculan con operadores a partir del h1) -----
+$tamano-h1: 3rem;
+$tamano-h2: math.div($tamano-h1 * 2, 3);    // 2rem
+$tamano-subtitulo: math.div($tamano-h1, 2); // 1.5rem: links del menú y títulos de tarjeta
+$tamano-titulo-lobster: 2.5rem;
+$tamano-texto-tarjeta: 1.2rem;
+
+// ----- Espaciados (múltiplos de una unidad base) -----
+$espacio-base: 0.5rem;
+$espacio-s: $espacio-base * 1.6;   // 0.8rem
+$espacio-m: $espacio-base * 2.5;   // 1.25rem
+$espacio-l: $espacio-base * 3;     // 1.5rem
+$espacio-xl: $espacio-base * 4;    // 2rem
+
+// ----- Bordes y transiciones -----
+$radio-borde: 5px;
+$transicion: 0.2s ease;
+
+// ----- Breakpoints (mobile first: la base es mobile, sin media query) -----
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+// ----- Imágenes (rutas relativas a css/style.css) -----
+$img-portada: "../img/fondo-portada.jpg";
+$img-eventos: "../img/fondo-eventos.png";

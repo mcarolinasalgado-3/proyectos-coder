@@ -1,0 +1,17 @@
+// ==========================================================
+// EXTEND — estilos compartidos con placeholders (%).
+// Un placeholder no genera CSS por sí solo: solo se escribe junto a
+// los selectores que lo extienden con @extend.
+// ==========================================================
+@use "variables" as *;
+
+// Texto en el amarillo de marca (títulos, header y main)
+%texto-primario {
+  color: $color-primario;
+}
+
+// Superficie oscura con texto amarillo (header y main)
+%superficie-oscura {
+  @extend %texto-primario;
+  background-color: $color-fondo;
+}
