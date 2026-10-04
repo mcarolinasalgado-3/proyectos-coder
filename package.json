@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "sass": "^1.105.0"
+  },
+  "scripts": {
+    "sass": "sass scss/main.scss css/style.css",
+    "watch": "sass --watch scss/main.scss css/style.css"
+  }
+}
