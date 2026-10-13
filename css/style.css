@@ -224,6 +224,12 @@ footer ul {
 .tarjeta p {
   font-size: 1.2rem;
 }
+.tarjeta blockquote {
+  margin: 0;
+}
+.tarjeta blockquote p {
+  font-size: 1.5rem;
+}
 .tarjeta img {
   width: 70%;
   height: 350px;

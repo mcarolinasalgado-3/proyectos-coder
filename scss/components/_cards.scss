@@ -30,6 +30,15 @@
     font-size: $tamano-texto-tarjeta;
   }
 
+  // Cita dentro de una tarjeta: la frase con el tamaño de un título
+  blockquote {
+    margin: 0;
+
+    p {
+      font-size: $tamano-subtitulo;
+    }
+  }
+
   img {
     width: 70%;
     height: 350px;
